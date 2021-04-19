@@ -55,20 +55,6 @@ client.connect(err => {
         const file = req.files.file;
         const serviceTitle = req.body.serviceTitle;
         const description = req.body.description;
-        console.log(file, serviceTitle, description);
-        file.mv(`${__dirname}/courses/${file.name}`, err => {
-            if(err){
-                console.log(err);
-                return res.status(500).send({massage: 'Failed to upload Image'});
-            }
-            return res.send({name: file.name, path: `/${file.name}`})
-        })
-    });
-
-    app.post('/addService', (req, res) => {
-        const file = req.files.file;
-        const serviceTitle = req.body.serviceTitle;
-        const description = req.body.description;
         const newImg = file.data;
         const encImg = newImg.toString('base64');
 
