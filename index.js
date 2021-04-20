@@ -35,20 +35,39 @@ client.connect(err => {
     console.log('database connected');
 
 
-    app.post('/addProduct', (req, res) => {
-        const product = req.body;
-        servicesCollection.insertMany(product)
+    app.get('/services', (req, res) => {
+        servicesCollection.find({})
+        .toArray( (err, services) => {
+            res.send(services);
+        })
+    })
+
+    app.get('/testimonials', (req, res) => {
+        testimonialsCollection.find({})
+        .toArray( (err, services) => {
+            res.send(services);
+        })
+    })
+
+    app.post('/addCourse', (req, res) => {
+        const newCourse = req.body;
+        console.log('Adding new book: ', newCourse);
+        servicesCollection.insertOne(newCourse)
         .then(result => {
-            console.log(result);
+            console.log('Inserted Count', result.insertedCount)
+            res.send(result.insertedCount > 0)
         })
     })
 
 
-    app.get('/services', (req, res) => {
-        servicesCollection.find({})
-            .toArray((err, service) => {
-                res.send(service);
-            })
+    app.post('/addReview', (req, res) => {
+        const newReview = req.body;
+        console.log('Adding new book: ', newReview);
+        testimonialsCollection.insertOne(newReview)
+        .then(result => {
+            console.log('Inserted Count', result.insertedCount)
+            res.send(result.insertedCount > 0)
+        })
     })
 
 
@@ -57,25 +76,6 @@ client.connect(err => {
         servicesCollection.findOne({ _id: ObjectId(id) })
             .toArray((err, item) => {
                 res.send(item);
-            })
-    })
-
-    app.post('/addService', (req, res) => {
-        const file = req.files.file;
-        const serviceTitle = req.body.serviceTitle;
-        const description = req.body.description;
-        const newImg = file.data;
-        const encImg = newImg.toString('base64');
-
-        var image = {
-            contentType: file.mimetype,
-            size: file.size,
-            img: Buffer.from(encImg, 'base64')
-        };
-
-        testimonialsCollection.insertOne({ serviceTitle, description, image })
-            .then(result => {
-                res.send(result.insertedCount > 0);
             })
     })
 
