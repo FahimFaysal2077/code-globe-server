@@ -35,6 +35,15 @@ client.connect(err => {
     console.log('database connected');
 
 
+    app.post('/addProduct', (req, res) => {
+        const product = req.body;
+        servicesCollection.insertMany(product)
+        .then(result => {
+            console.log(result);
+        })
+    })
+
+
     app.get('/services', (req, res) => {
         servicesCollection.find({})
             .toArray((err, service) => {
