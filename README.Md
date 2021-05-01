@@ -23,3 +23,10 @@ https://code-globe.web.app/
 
 #### Technologies:
 Node.Js, MongoDB, Express.Js, body-parser, nodemon, cors, Heroku, server, etc.
+
+
+## Resume Link:
+ https://ready-rides-bangladesh.web.app/
+ 
+## Linkedin Link:
+ https://ready-rides-bangladesh.web.app/
