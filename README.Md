@@ -27,3 +27,7 @@ https://code-globe.web.app/
 *Services,
 *Footer,
 *Feature etc.
+
+
+#### Technologies:
+Node.Js, MongoDB, Express.Js, body-parser, nodemon, cors, Heroku, server, etc.
