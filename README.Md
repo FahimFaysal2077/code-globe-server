@@ -7,26 +7,18 @@ CODE
 https://code-globe.web.app/
 
 
-### Wesite Feature:
-01. I have show many section on one page using backend API.
+### Server Feature:
+01. I have use MongoDB database to store backend data.
 
-02. I am use a React router and click on a card, the details will go to a route. And I have to use the route parameter of React Router according to where I am clicked. Uses route parameters. Dynamically.
+02. This sever run in localhost5000 in my local computer & also in backend server.
 
-03. I have also access form mongodb database for route parameters on the detail page, create a dynamic url with it and load the data accordingly.
+03. I have access server form mongodb database for create a dynamic route url with the load data accordingly.
 
-04. I using Font Awesome to make the social media icon.
+04. I using body-parser & cors to make the sever & database connection.
 
-05. I used Ternary Operator for Conditional formatting on the TeamDetail component.
+05. I used daynamic id parameter from database MongoDB to collect the matching data in client site.
 
-06. I make my web-site light & responsive. Must be a desktop version and a mobile version.
-
-07. There are many information for every each Home section. Such as a:
-*Course,
-*Testimonials,
-*Teachers,
-*Services,
-*Footer,
-*Feature etc.
+06. I make my server-site light & daynamic. Must be a use from MongoDB database.
 
 
 #### Technologies:
